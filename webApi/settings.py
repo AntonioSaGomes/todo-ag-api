@@ -56,12 +56,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://todo-ag-api.herokuapp.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:8080"
+    "*"
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'webApi.urls'
 
