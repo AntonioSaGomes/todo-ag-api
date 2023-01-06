@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders'
     'quickstart',
 ]
 
@@ -50,8 +51,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://todo-ag-api.herokuapp.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:8080"
+]
+
+CORS_ORIGIN_ALLOW_ALL = False
 
 ROOT_URLCONF = 'webApi.urls'
 
