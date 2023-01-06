@@ -18,6 +18,6 @@ from django.urls import path
 from quickstart import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todos/', views.todo_list)
-
+    path('todos/', views.todo_list),
+    path('todo', views.todo)
 ]
