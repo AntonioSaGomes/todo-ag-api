@@ -19,5 +19,5 @@ from quickstart import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('todos/', views.todo_list),
-    path('todo', views.todo)
+    path('todo/<int:id>', views.todo)
 ]
