@@ -9,4 +9,10 @@ def todo_list(request):
     serializer = TodoSerializer(todos, many=True)
     return JsonResponse(serializer.data, safe=False)
 
+def add_todo(request):
+
+    todos = Todo.objects.all()
+    serializer = TodoSerializer(todos, many=True)
+    return JsonResponse(serializer.data, safe=False)
+
 # Create your views here.
