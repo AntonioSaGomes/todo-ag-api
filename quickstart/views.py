@@ -26,6 +26,8 @@ def todo(request, id):
     if request.method == 'PUT':
         serializer = TodoSerializer(todo, data=request.data)
         if serializer.is_valid():
+            serializer.save()
+            print('serializer',serializer.data)
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
