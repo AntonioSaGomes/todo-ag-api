@@ -8,7 +8,7 @@ from rest_framework import status
 @api_view(['GET','POST'])
 def todo_list(request):
     if request.method == 'GET':
-        todos = Todo.objects.all()
+        todos = Todo.objects.all().order_by("order")
         serializer = TodoSerializer(todos, many=True)
         return JsonResponse(serializer.data, safe=False)
     if request.method == 'POST':
