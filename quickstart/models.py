@@ -6,3 +6,5 @@ class Todo(models.Model):
     dueDate = models.DateField()
     priority = models.TextField()
     completed = models.BooleanField(default=False)
+    order = models.IntegerField(default=1)
+    section = models.CharField(max_length=100, default="In Progress")
